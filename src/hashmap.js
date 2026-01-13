@@ -10,7 +10,7 @@ export class HashMap {
 
         const primeNum = 31;
         for(let i = 0; i < key.length; i ++) {
-            hashCode = primeNum * hashCode + key.charCodeAt(i) % this.capacity;
+            hashCode = primeNum * hashCode + key.charCodeAt(i);
         }
 
         return hashCode;
@@ -30,8 +30,19 @@ export class HashMap {
         return null;
     }
 
+    grow() {
+        const oldEntries = this.entries();
+        this.capacity *= 2;
+        this.clear();
+        oldEntries.forEach(entry => {
+            this.set(entry.key, entry.value);
+        })
+    }
+
     set(key, value) {
-        //Will need to add logic to grow buckets to double capacity when hash map reaches the "load factor"
+        if(this.length() + 1 > this.capacity * this.loadFactor) {
+            this.grow();
+        }
         let bucket = this.bucket(key);
         let entry = this.entry(bucket, key);
         if(entry) {
@@ -76,7 +87,7 @@ export class HashMap {
             if(bucket) {
                 return acc + bucket.length;
             }
-        });
+        }, 0);
     }
 
     clear() {
