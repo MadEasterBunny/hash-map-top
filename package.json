@@ -1,7 +1,7 @@
 {
-  "name": "todo-top",
+  "name": "hash-map-top",
   "version": "1.0.0",
-  "description": "A todo list created using HTML, CSS and JavaScript through The Odin Project",
+  "description": "A hash map created through The Odin Project",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.prod.js",
@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MadEasterBunny/todo-top.git"
+    "url": "git+https://github.com/MadEasterBunny/hash-map-top.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MadEasterBunny/todo-top/issues"
+    "url": "https://github.com/MadEasterBunny/hash-map-top/issues"
   },
-  "homepage": "https://github.com/MadEasterBunny/todo-top#readme",
+  "homepage": "https://github.com/MadEasterBunny/hash-map-top#readme",
   "devDependencies": {
     "css-loader": "^7.1.2",
     "html-webpack-plugin": "^5.6.5",

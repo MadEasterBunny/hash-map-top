@@ -1,3 +1,3 @@
-# webpack-template-top
+# hash-map-top
 
-A template for sites created using webpack through The Odin Project
+A hash map created through The Odin Project
