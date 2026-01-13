@@ -18,5 +18,7 @@ test.set('lion', 'golden');
 test.set('lion', 'test');
 test.remove('lion');
 
+// test.clear();
+
 console.log(test.buckets);
-console.log(test.has('carrot'));
+console.log(test.entries());

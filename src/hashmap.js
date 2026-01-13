@@ -70,13 +70,46 @@ export class HashMap {
         }
         return false;
     }
+
+    length() {
+        return this.buckets.reduce((acc, bucket) => {
+            if(bucket) {
+                return acc + bucket.length;
+            }
+        });
+    }
+
+    clear() {
+        this.buckets = new Array(this.capacity).fill(null).map(() => []);
+    }
+
+    keys() {
+        let keysArr = [];
+        for(let entries of this.buckets) {
+            for(let entry of entries) {
+                keysArr.push(entry.key);
+            }
+        }
+        return keysArr;
+    }
+
+    values() {
+        let valuesArr = [];
+        for(let entries of this.buckets) {
+            for(let entry of entries) {
+                valuesArr.push(entry.value);
+            }
+        }
+        return valuesArr;
+    }
+
+    entries() {
+        let entriesArr = [];
+        for(let entries of this.buckets) {
+            for(let entry of entries) {
+                entriesArr.push(entry);
+            }
+        }
+        return entriesArr;
+    }
 }
-
-/*
-Use the following snippet whenever you access a bucket through an index
-
-if (index < 0 || index >= buckets.length) {
-  throw new Error("Trying to access index out of bounds");
-}
-
-*/
