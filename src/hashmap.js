@@ -31,6 +31,7 @@ export class HashMap {
     }
 
     set(key, value) {
+        //Will need to add logic to grow buckets to double capacity when hash map reaches the "load factor"
         let bucket = this.bucket(key);
         let entry = this.entry(bucket, key);
         if(entry) {
@@ -47,6 +48,27 @@ export class HashMap {
             return entry.value;
         }
         return null;
+    }
+
+    has(key) {
+        let bucket = this.bucket(key);
+        let entry = this.entry(bucket, key);
+        if(entry) {
+            if(entry.key) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    remove(key) {
+        let bucket = this.bucket(key);
+        let index = bucket.findIndex(entry => entry.key === key);
+        if(index !== -1) {
+            bucket.splice(index, 1);
+            return true;
+        }
+        return false;
     }
 }
 

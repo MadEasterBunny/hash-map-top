@@ -16,6 +16,7 @@ test.set('kite', 'pink');
 test.set('lion', 'golden');
 
 test.set('lion', 'test');
+test.remove('lion');
 
 console.log(test.buckets);
-console.log(test.get('frog'));
+console.log(test.has('carrot'));
